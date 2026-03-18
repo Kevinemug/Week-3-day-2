@@ -1,6 +1,6 @@
 # 💻 Command-Line and Execution
 
-## 🎯 Learning Objectives
+##  Learning Objectives
 
 - Compile and run Java programs from the command line
 - Pass arguments to a Java program via `args[]`
@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Exercise 1: Compile and Run "Hello, World"
+##  Exercise 1: Compile and Run "Hello, World"
 
 ### Question
 
@@ -31,26 +31,9 @@ public class Hello {
 
 ---
 
-### ✅ Answer
 
-```bash
-# 1. Compile
-javac Hello.java
 
-# 2. Run
-java Hello
-
-# 3. Files produced
-# Hello.class  (JVM bytecode)
-```
-
-- `javac Hello.java` invokes the **Java compiler**, which translates source code (`.java`) into **bytecode** (`.class`).
-- `java Hello` starts the JVM and loads `Hello.class`, then calls the `main` method.
-- You pass the **class name** (not the file name) to `java`.
-
----
-
-## 📌 Exercise 2: Command-Line Arguments
+##  Exercise 2: Command-Line Arguments
 
 ### Question
 
@@ -66,37 +49,9 @@ Show both the source code and the commands to run it with and without an argumen
 
 ---
 
-### ✅ Answer
 
-```java
-// Greeter.java
-public class Greeter {
-    public static void main(String[] args) {
-        String name = args.length > 0 ? args[0] : "Stranger";
-        System.out.println("Hello, " + name + "!");
-    }
-}
-```
 
-```bash
-# Compile
-javac Greeter.java
-
-# Run with argument
-java Greeter Alice
-# Output: Hello, Alice!
-
-# Run without argument
-java Greeter
-# Output: Hello, Stranger!
-```
-
-- `args` is a `String[]` containing all tokens passed after the class name.
-- `args[0]` is the first argument; `args.length` tells you how many were provided.
-
----
-
-## 📌 Exercise 3: Classpath
+## Exercise 3: Classpath
 
 ### Question
 
@@ -127,24 +82,8 @@ public class App {
 
 ---
 
-### ✅ Answer
 
-```bash
-# 1. Compile – -d specifies the output directory; javac preserves the package structure
-javac -d out/ src/com/example/App.java
-
-# 2. Run – -cp (or -classpath) points to the directory containing compiled classes
-java -cp out/ com.example.App
-# Output: Running from package!
-```
-
-- The `-d` flag tells `javac` where to place the compiled `.class` files.
-- The `-cp` flag tells `java` where to search for `.class` files.
-- You must use the **fully qualified class name** (`com.example.App`) when using packages.
-
----
-
-## 📌 Exercise 4: Running a JAR File
+##  Exercise 4: Running a JAR File
 
 ### Question
 
@@ -157,25 +96,9 @@ After packaging `App` into a JAR file `app.jar`:
 
 ---
 
-### ✅ Answer
 
-```bash
-# 1. Create the JAR
-#    -c: create  -v: verbose  -f: output file  -e: entry point (main class)
-jar -cvfe app.jar com.example.App -C out/ .
 
-# 2. Run the JAR
-java -jar app.jar
-# Output: Running from package!
-```
-
-- The **manifest** inside the JAR records which class contains `main`.
-- `-e com.example.App` sets the `Main-Class` attribute automatically.
-- Anyone with the JAR file can run it on any machine with a JRE installed.
-
----
-
-## 📌 Key Commands Reference
+##  Key Commands Reference
 
 | Command | Purpose |
 |---|---|
