@@ -1,6 +1,6 @@
-# 🧠 JVM Basics
+#  JVM Basics
 
-## 🎯 Learning Objectives
+##  Learning Objectives
 
 - Understand how the JVM manages memory (heap, stack, string pool)
 - Distinguish between reference equality (`==`) and value equality (`.equals()`)
@@ -9,7 +9,7 @@
 
 ---
 
-## 📌 Exercise: JVM Deep Dive – String Pool, Heap, and References
+##  Exercise: JVM Deep Dive – String Pool, Heap, and References
 
 ### Question
 
@@ -44,7 +44,7 @@ Explain the output of each `System.out.println` line and describe what is happen
 
 ---
 
-## ✅ Answer
+##  Answer
 
 ### Output
 
@@ -84,22 +84,7 @@ true
 
 ---
 
-### Memory Diagram
 
-```
-String Pool (Heap)
-┌─────────────────────┐
-│  "hello"  ◄─── b, c, d │
-└─────────────────────┘
-
-Regular Heap
-┌─────────────────────┐
-│  String@1a2b3c ("hello")  ◄─── a          │
-│  String@4d5e6f ("hello")  (anonymous, from new String("hello").intern() call, now GC-eligible) │
-└─────────────────────┘
-```
-
----
 
 ### `==` vs `.equals()`
 
