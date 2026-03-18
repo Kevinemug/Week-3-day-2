@@ -1,7 +1,7 @@
 # Week 3: Java Fundamentals Exercises
 
 This repository contains hands-on exercises covering core Java and JVM concepts.
-Each topic has its own directory with a `README.md` that includes exercises and full answers.
+Each topic has its own directory with a `README.md`.
 
 ##  Topics
 
